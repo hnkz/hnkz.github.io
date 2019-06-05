@@ -34,3 +34,5 @@ My History
 - 2018 8  Participate in the internship in <a href="https://internship.cookpad.com/2018/summer/">Cookpad</a>
 - 2019 3  Participate in the internship in <a href="https://www.fixstars.com">Fixstars</a>
 - 2019 5  Win first place in <a href="http://www.riis.or.jp/symposium23/crisismanagement/final/">情報危機管理コンテスト</a> as a member of sawayaka-sec.
+
+<address>hanakazu8989@gmail.com</address>
