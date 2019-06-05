@@ -1,6 +1,7 @@
 # The URL the site will be built for
 base_url = "https://hnkz.github.io"
 
+title = "sugerme no site"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -21,7 +22,7 @@ taxonomies = [
 
 [extra]
 # Put all your custom variables here
-after_dark_title = "Sugerme no site"
+after_dark_title = "sugerme no site"
 after_dark_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/self-introduction", name = "Self-Introduction"},
