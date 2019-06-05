@@ -1,3 +1,3 @@
 [submodule "themes/after-dark"]
-	path = theme/after-dark
+	path = themes/after-dark
 	url = https://github.com/hnkz/after-dark.git
