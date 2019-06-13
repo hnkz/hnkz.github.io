@@ -25,7 +25,7 @@ taxonomies = [
 after_dark_title = "sugerme no site"
 after_dark_menu = [
     {url = "$BASE_URL", name = "Home"},
-    {url = "$BASE_URL/self-introduction", name = "Self-Introduction"},
+    {url = "$BASE_URL/20190603_self_introduction", name = "Self-Introduction"},
     {url = "$BASE_URL/categories", name = "Categories"},
     {url = "$BASE_URL/tags", name = "Tags"},
 ]
