@@ -4,7 +4,7 @@ date = 2019-06-13
 
 [taxonomies]
 categories = ["雑"]
-tags = ["雑", "poem"]
+tags = ["雑", "ポエム"]
 
 +++
 

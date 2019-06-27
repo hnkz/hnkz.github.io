@@ -3,7 +3,7 @@ title = "Distributed System of Apocalypse"
 date = 2019-06-14
 
 [taxonomies]
-categories = ["distributed system", "research", "progress"]
+categories = ["distributed system", "研究", "進捗"]
 tags = ["distributed system"]
 
 +++

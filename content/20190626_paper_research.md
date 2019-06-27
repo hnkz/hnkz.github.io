@@ -3,8 +3,8 @@ title = "The ITC Distributed File System Principles and Design"
 date = 2019-06-26
 
 [taxonomies]
-categories = ["distributed system", "research", "paper research"]
-tags = ["distributed system", "filesystem"]
+categories = ["distributed system", "研究", "論文リサーチ"]
+tags = ["distributed system", "file system"]
 
 +++
 

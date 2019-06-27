@@ -3,8 +3,8 @@ title = "self-introduction"
 date = 2019-06-03
 
 [taxonomies]
-categories = ["introduction"]
-tags = ["雑", "Self-Introduction"]
+categories = ["自己紹介"]
+tags = ["雑", "自己紹介"]
 
 +++
 
