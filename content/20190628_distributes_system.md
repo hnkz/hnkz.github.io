@@ -1,6 +1,6 @@
 +++
 title = "Distributed System of Apocalypse"
-date = 2019-06-19
+date = 2019-06-28
 
 [taxonomies]
 categories = ["distributed system", "研究", "進捗"]
