@@ -1,0 +1,197 @@
++++
+title = "Distributed System of Apocalypse"
+date = 2019-06-19
+
+[taxonomies]
+categories = ["distributed system", "研究", "進捗"]
+tags = ["distributed system"]
+
++++
+
+分散システムについて調べたことをまとめていきます。
+- NDSSまとめ
+
+<!-- more -->
+
+The Network and Distributed System Security Symposium (NDSS)という学会の論文を虱潰しに調査していきます。タイトルとアブストを読みます。
+
+## NDSS 2019
+- Don’t Trust The Locals: Investigating the Prevalence of Persistent Client-Side Cross-Site Scripting in the Wild
+    - XSSの調査？
+- Countering Malicious Processes with Process-DNS Association
+    - DNSに関連する攻撃のモニタリングを行うやつ
+- A Treasury System for Cryptocurrencies: Enabling Better Collaborative Intelligence
+    - 暗号通貨のための財務システムの研究
+- The Unexpected Danger of UX Features: A Case of Sensitive Data Leakage of Drivers in Ride-Hailing Services
+    - 送迎サービスのセンシティブ情報のなんか
+- Cybercriminal Minds: An investigative study of cryptocurrency abuses in the Dark Web 
+    - ダークウェブの暗号通貨のなんか
+- Giving State to the Stateless: Augmenting Trustworthy Computation with Ledgers
+    - 暗号通貨の何か...(よくわからなかった)
+- Data Oblivious ISA Extensions for Side Channel-Resistant and High Performance Computing
+    - Data Oblivious ISAを作ったらしいです、NDSSでもこんな論文あるんだ...
+- MBeacon: Privacy-Preserving Beacons for DNA Methylation Data
+    - ビーコンというものが生理医学？の分野にあってそれのセンシティブな実装の提案的なやつです
+- Fine-Grained and Controlled Rewriting in Blockchains: Chameleon-Hashing Gone Attribute-Based
+    - ぶろっくちぇーん
+- TIMBER-V: Tag-Isolated Memory Bringing Fine-grained Enclaves to RISC-V 
+    - メモリ領域にタグつけるやつだった希ガス
+- Master of Web Puppets: Abusing Web Browsers for Persistent and Stealthy Computation
+    - ブラウザベースのボットネット提案
+- UWB with Pulse Reordering: Securing Ranging against Relay and Physical-Layer Attacks
+    - UWBの攻撃
+- ML-Leaks: Model and Data Independent Membership Inference Attacks and Defenses on Machine Learning Models
+    - 機械学習の脆弱性的な
+- Distinguishing Attacks from Legitimate Authentication Traffic at Scale
+    - 機械学習で悪意あるトラフィックを検知する的な？
+- Automating Patching of Vulnerable Open-Source Software Versions in Application Binaries
+    - モバイルアプリケーションのバイナリにソースコードから自動でパッチを当てるやつ
+- TextBugger: Generating Adversarial Text Against Real-world Applications
+    - アドバーサリアルエグザンプル的な
+- YODA: Enabling computationally intensive contracts on blockchains with Byzantine and Selfish nodes
+    - スマートコントラクトに適したソリューション
+- Time Does Not Heal All Wounds: A Longitudinal Analysis of Security-Mechanism Support in Mobile Browsers
+    - Webアプリケーションの脆弱性の分析的な
+- Please Forget Where I Was Last Summer: The Privacy Risks of Public Location (Meta)Data
+    - プライバシーの話
+- JavaScript Template Attacks: Automatically Inferring Host Information for Targeted Exploits
+    - 自動的に環境によるブラウザの違いを検出する
+- Establishing Software Root of Trust Unconditionally
+    - RoT？について、よくわからない
+- Understanding Open Ports in Android Applications: Discovery, Diagnosis, and Security Assessment
+    - アンドロイドのポート
+- PeriScope: An Effective Probing and Fuzzing Framework for the Hardware-OS Boundary
+    - ファジング
+- Total Recall: Persistence of Password in Android
+    - アンドロイドの不要なパスワード保持を見る
+- DNS Cache-Based User Tracking
+    - DNSでユーザトラックをする
+- Thunderclap: Exploiting the Attack Surface of Operating-System IOMMU Protection with DMA from Malicious Peripherals
+    - Thunderbolt3の脆弱性の話
+- TEE-aided Write Protection Against Privileged Data Tampering
+    - データを保護する仕組みっぽい
+- Stealthy Adversarial Perturbations Against Real-Time Video Classification Systems
+    - AE的な
+- The Crux of Voice (In)Security: A Brain Study of Speaker Legitimacy Detection
+    - Voice hackingのやつ
+- Statistical Privacy for Streaming Traffic
+    - 暗号化されたストリーミングトラフィックのプライバシー保護のためのメカニズムの提案
+- Graph-based Security and Privacy Analytics via Collective Classification with Joint Weight Learning and Propagation
+    - グラフでプライバシーとか分析するやつ
+- Cracking Wall of Confinement: Understanding and Analyzing Malicious Domain Takedowns
+    - Domain Takedownsをするマルウェアの分析とか
+- SABRE: Protecting Bitcoin against Routing Attacks
+    - ルーティングアタックに強いブロックチェーンのネットワークを作った
+- CodeAlchemist: Semantics-Aware Code Generation to Find Vulnerabilities in JavaScript Engines
+    - JSエンジンのセマンティクス用の脆弱性発見する提案
+- A Systematic Framework to Generate Invariants for Anomaly Detection in Industrial Control Systems
+    - ICSのためのルールを、ログから自動で生成する機械学習の研究
+- ICSREF: A Framework for Automated Reverse Engineering of Industrial Control Systems Binaries
+    - ICSのためのリバエンツール
+- Coconut: Threshold Issuance Selective Disclosure Credentials with Applications to Distributed Ledgers
+    - ブロックチェーンのなんか、よくわからないかった
+- A First Look into the Facebook Advertising Ecosystem
+    - FBの広告システムのなんか
+- Adversarial Attacks Against Automatic Speech Recognition Systems via Psychoacoustic Hiding
+    - 言語認識のAE的な
+- Latex Gloves: Protecting Browser Extensions from Probing and Revelation Attacks
+    - ブラウザのエクステンションのrevelation attackとかいうのの研究らしい、よくわからん
+- Vault: Fast Bootstrapping for Cryptocurrencies
+    - ストレージとブートストラップのコストを減らす新しい暗号通貨の設計
+- rORAM: Efficient Range ORAM with O(log2 N) Locality
+    - ORAMの領域をランダムにしても効率的にアクセスできる何か
+- IoTGuard: Dynamic Enforcement of Security and Safety Policy in Commodity IoT
+    - IoTの商品に動的にセキュリティルｰルをつけるやつ
+- Ginseng: Keeping Secrets in Registers When You Distrust the Operating System
+    - TEEなしで、レジスターレベルでデータをセキュアにするやつ
+- Privacy-preserving Multi-hop Locks for Blockchain Scalability and Interoperability
+    - ブロックチェーンの拡大のためにPCNをセキュアにする
+- Constructing an Adversary Solver for Equihash
+    - ブロックチェーンわからん
+- One Engine To Serve’em All: Inferring Taint Rules Without Architectural Semantics
+    - taintって何
+    - アーキテクチャにとらわれない汚染追跡のエンジンを作ったらしい、よくわからん
+- NoDoze: Combatting Threat Alert Fatigue with Automated Provenance Triage
+    - 多すぎるセキュリティアラートを減らした何かを作ったらしい
+- How to end password reuse on the web
+    - パスワードの再利用をさせないフレームワーク
+- Robust Performance Metrics for Authentication Systems
+    - 認証システムの計測基準が本質的なものを隠してしまうから新しいのを作った的な
+- Practical Hidden Voice Attacks against Speech and Speaker Recognition Systems
+    - 声の
+- **Nearby Threats: Reversing, Analyzing, and Attacking Google’s “Nearby Connections” on Andr**
+    - GoogleのNearby connection apiのセキュリティ
+- REDQUEEN: Fuzzing with Input-to-State Correspondence
+    - ファジングのtaint trackingやシンボリック実行は前提が色々必要なので新しい効率的な方法を考えた
+- We Value Your Privacy … Now Take Some Cookies: Measuring the GDPR’s Impact on Web Privacy
+    - GDPRの影響的な
+- Rigging Research Results by Manipulating Top Websites Rankings<Paste>
+	- 研究の指標とかでも使われるWebサイトランキングが操作できることを示した
+- Quantity vs. Quality: Evaluating User Interest Profiles Using Ad Preference Managers
+	- 広告のなんか
+- Component-Based Formal Analysis of 5G-AKA: Channel Assumptions and Session Confusion
+	- 5Gの認証とかの分析、セキュアじゃないことを発見した
+- DroidCap: OS Support for Capability-based Permissions in Android
+	- アンドロイドのパーミッション機構を変えたらしい
+- On the Challenges of Geographical Avoidance for Tor
+	- geographical avoidanceっていう手法でTorの追跡を避けるらしい
+- ExSpectre: Hiding Malware in Speculative Execution
+	- 投機実行を用いてマルウェアを隠す
+- ConcurORAM: High-Throughput Stateless Parallel Multi-Client ORAM
+	- 並行でマルチクライアントなORAMらしい
+- NAUTILUS: Fishing for Deep Bugs with Grammars
+	- 構造的な入力が必要なファジングプログラムを文法を用いて作る的な
+- Seth: Protecting Existing Smart Contracts Against Re-Entrancy Attacks
+	- スマートコントラクトのセキュリティ
+- NIC: Detecting Adversarial Samples with Neural Network Invariant Checking
+	- AEの検出
+- How Bad Can It Git? Characterizing Secret Leakage in Public GitHub Repositories
+	- GitHubのシークレットが漏れてるやつの分析
+- DIAT: Data Integrity Attestation for Resilient Collaboration of Autonomous Systems
+	- 自律協調ネットワークでデータの安全性を検証する方法を提案
+- Analyzing Semantic Correctness using Symbolic Execution: A Case Study on PKCS#1 v1.5 Signature Verification
+	- シンボリック実行が低レイヤーのエラー発見だけじゃなくて、プロトコル実装のセマンティックの正確性検査にも使えることを示すらしい
+- Balancing Image Privacy and Usability with Thumbnail-Preserving Encryption
+	- サムネイルとかの見やすさとプライバシーの研究
+- Cleaning Up the Internet of Evil Things: Real-World Evidence on ISP and Consumer Efforts to Remove Mirai
+	- IoTのマルウェア駆除
+- Privacy Attacks to the 4G and 5G Cellular Paging Protocols Using Side Channel Information
+	- Cellular Pagingプロトコル？4Gと5G？プライバシーの攻撃らしい。
+- Digital Healthcare-Associated Infection Analysis of a Major Multi-Campus Hospital System
+	- 病院のシステムのセキュリティ的な
+- SANCTUARY: ARMing TrustZone with User-space Enclaves
+	- 仮想化せずにTrustZoneを使いまくれるセキュアなアーキテクチャ
+- RFDIDS: Radio Frequency-based Distributed Intrusion Detection System for the Power Grid
+	- パワーグリッドのための侵入検知をする？システムかな
+- BadBluetooth: Breaking Android Security Mechanisms via Malicious Bluetooth Peripherals
+	- アンドロイドのセキュリティ機構をぶっ壊す悪いブルートゥース
+- Measurement and Analysis of Hajime, a Peer-to-peer IoT Botnet
+	- IoTボットネット解析のこれからのために、Hajimeを解析するぜ！
+- Neural Machine Translation Inspired Binary Code Similarity Comparison beyond Function Pairs
+	- 多分なんかバイナリ解析の何か
+- Enemy At the Gateways: Censorship-Resilient Proxy Distribution Using Game Theory
+	- ゲーム理論を使ってプロキシーがどうたらこうたら...
+- Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing
+	- ファジング
+- The use of TLS in Censorship Circumvention
+	- censorship circumventionのTLS実装を分析するらしい
+- OBFSCURO: A Commodity Obfuscation Engine on Intel SGX 
+	- 難読化のセキュリティ？よくわからん。疲れた
+- Mind your Own Business: A Longitudinal Study of Threats and Vulnerabilities in Enterprises
+	- 企業の脆弱性だってさ。ビジネス。
+- Life after Speech Recognition: Fuzzing Semantic Misinterpretation for Voice Assistant Applications
+	- 音声認識てきなの。ファジング？よくわからん。
+- Neuro-Symbolic Execution: Augmenting Symbolic Execution with Neural Constraints
+	- んーーーシンボリック実行とニューラルなんとか！
+- Private Continual Release of Real-Valued Data Streams
+	- 価値あるデータ？ストリーム？よくわからん
+- Profit: Detecting and Quantifying Side Channels in Networked Applications
+	- サイドチャネルとネットワーク！！！！
+- CRCount: Pointer Invalidation with Reference Counting to Mitigate Use-after-free in Legacy C/C++ 
+	- リファレンスカウント！C++！！！
+- Oligo-Snoop: A Non-Invasive Side Channel Attack Against DNA Synthesis Machines
+	- サイドチャネル攻撃！！！！
+- maTLS: How to Make TLS middlebox-aware?
+	- TLS
+
+ああああああああああああああああああああああああああああああああああああああああああああああああああ疲れたああああああああああああああああああああああ
