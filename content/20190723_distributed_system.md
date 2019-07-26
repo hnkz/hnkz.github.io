@@ -67,7 +67,7 @@ FASTはFile and Storage Technologiesの略で、USENIX(Unix Useer Group)が主�
 - Ziggurat: A Tiered File System for Non-Volatile Main Memories and Disks
   - Non-Volatile Main Memory(NVMM)
   - NVMMと遅いディスクを組み合わせたファイルシステムの提案
-- Orion: A Distributed File System for Non-Volatile Main Memoriesand RDMA-Capable Networks
+- Orion: A Distributed File System for Non-Volatile Main Memoriesand RDMA-Capable Networks
   - distributed file system!!! for NVMM
   - ネットワークのこととか考えてる！！！
 
