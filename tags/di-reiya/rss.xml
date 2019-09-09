@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>sugerme no site</title>
+        <link>https://hnkz.github.io</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://hnkz.github.io/tags/di-reiya/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 12 Jun 2019 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>NASMのプリプロセッサについて</title>
+                <pubDate>Wed, 12 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190612-nasm/</link>
+                <guid>https://hnkz.github.io/20190612-nasm/</guid>
+                <description>&lt;p&gt;NASMのプリプロセッサについてちょっとだけ調べました。&lt;&#x2f;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

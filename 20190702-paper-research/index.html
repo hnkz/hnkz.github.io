@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>sugerme no site</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://hnkz.github.io/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+            <header>
+                <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io">
+                        <span itemprop="name">Home
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/20190603-self-introduction">
+                        <span itemprop="name">Self-Introduction
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/categories">
+                        <span itemprop="name">Categories
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/tags">
+                        <span itemprop="name">Tags
+                        </span></a>
+                
+                </nav>
+            </header>
+        
+        <h1 itemprop="headline">A comprehensive survey on fog computing: State-of-the-art and research challenges</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>2 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2019-07-02
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>分散システムについて調べていたらこの論文を見つけたので、読んでみました。</p>
+<h2 id="lun-wen-qing-bao">論文情報</h2>
+<p>サーベイ論文</p>
+<pre style="background-color:#002b36;">
+<span style="color:#839496;">@article{mouradian2017comprehensive,
+  title={A comprehensive survey on fog computing: State-of-the-art and research challenges},
+  author={Mouradian, Carla and Naboulsi, Diala and Yangui, Sami and Glitho, Roch H and Morrow, Monique J and Polakos, Paul A},
+  journal={IEEE Communications Surveys \&amp; Tutorials},
+  volume={20},
+  number={1},
+  pages={416--464},
+  year={2017},
+  publisher={IEEE}
+}
+</span></pre><p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h2 id="yi-yan-shuo-ming">一言説明</h2>
+<ul>
+<li>エンドデバイスとの距離によるレイテンシはクラウドコンピューティングの問題</li>
+<li>フォッグコンピューティングがその問題を解決する
+<ul>
+<li>リソースとクラウドの外のサービスをプロビジョニングできる</li>
+</ul>
+</li>
+<li>この論文ではフォッグコンピューティングのサーベイ結果を提供する</li>
+<li>フォッグコンピューティングのアーキテクチャとアルゴリズムについて述べる</li>
+<li>課題や研究についても紹介する</li>
+</ul>
+<h2 id="matome">まとめ</h2>
+<h3 id="introde-na">Intro的な</h3>
+<h4 id="cyber-foraging">Cyber Foraging</h4>
+<ul>
+<li>近くのサーバに重い処理を任せる、サーバはsurrogateと呼ばれる</li>
+<li>Surrogateはローカルディスクにデータベースの一部を持ってたりするかも</li>
+<li>Surrogateはデバイスに近いので低いレイテンシで結果の送信をすることができる</li>
+</ul>
+<h4 id="cloudlet">Cloudlet</h4>
+<ul>
+<li>2009年にSatyanarayananらが提案</li>
+<li>Cyber ForagingのVMバージョンって感じ</li>
+</ul>
+<h4 id="multi-access-edge-computing-mec">Multi-Access Edge Computing(MEC)</h4>
+<ul>
+<li>モバイルネットワークと仮想化テクノロジーにフォーカスした2014年に提案されたもの</li>
+<li>しかし、2017年にnon-mobileネットワークに要件が変わった</li>
+<li>5Gに向けた技術、Radio Access Networkを利用する</li>
+<li>ESTI主導でAPIの標準化なども行う</li>
+</ul>
+<h4 id="fog-computing">Fog Computing</h4>
+<ul>
+<li>2012年にCISCOで紹介された</li>
+<li>クラウドの存在は必須、Cyber ForagingやCloudletのようにスタンドアローンでの実行はできない</li>
+<li>エッジネットワークでの処理が可能</li>
+<li>n-tierアーキテクチャ</li>
+<li>クラウドと通信する必要があるときはWAN、なるべくLANを使う</li>
+</ul>
+<h4 id="lei-si-dian-xiang-wei-dian-cloudlet-mec-fog-computing">類似点、相違点（Cloudlet, MEC, Fog Computing)</h4>
+<ul>
+<li>MECのみ業界コンソーシアムで推進されている</li>
+<li>CloudletはVMのみに頼る、他の2つは仮想化技術に頼ってる</li>
+<li>MECはスタンドアローンに動作する</li>
+<li>Cloudletはスタンドアローン、クラウド、どちらでも動作する</li>
+<li><img src="https://hnkz.github.io/20190702-paper-research/20190708_ven.png" alt="A Venn diagram for the Relationship between Fog Computing, Cloudlet, and MEC." /></li>
+</ul>
+<h3 id="fog-computingnoshi-yong-li-toka">Fog Computingの使用例とか</h3>
+<h4 id="yusukesunoli-shi">ユースケースの例示</h4>
+<ul>
+<li>CDNとしての利用</li>
+<li>火災報知器としての利用</li>
+</ul>
+<h3 id="akitekutiya">アーキテクチャ</h3>
+<h3 id="arugorizumu">アルゴリズム</h3>
+<h2 id="ci-nidu-mubekilun-wen">次に読むべき論文</h2>
+<ul>
+<li>A Secure Content Caching Scheme for Disaster Backup in Fog Computing Enabled Mobile Social Networks
+<ul>
+<li>https://ieeexplore.ieee.org/abstract/document/8395067</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                
+                    
+                    in <a href="https://hnkz.github.io/categories/distributed-system/">distributed system</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://hnkz.github.io/tags/distributed-system/">distributed system</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://hnkz.github.io/tags/rpc/">RPC</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://hnkz.github.io/tags/cache/">cache</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

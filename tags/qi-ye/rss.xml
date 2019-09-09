@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>sugerme no site</title>
+        <link>https://hnkz.github.io</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://hnkz.github.io/tags/qi-ye/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Thu, 27 Jun 2019 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>&#x27;こうして店は潰れた　地域土着スーパー「やまと」の教訓&#x27;を読んで</title>
+                <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190627-book-review/</link>
+                <guid>https://hnkz.github.io/20190627-book-review/</guid>
+                <description>&lt;p&gt;先週末に購入した本、「こうして店は潰れた　地域土着スーパー「やまと」の教訓」を読み終えたので、書評を書いてみようと思う。
+新品かつ紙の本を買ったのは久しぶりだ。本屋さんで偶然目に止まって、立ち読みしているあっという間に引き込まれた。
+本を読んでいるうちに被害者（と言っていいものか分からないが）の方々への憐れみや悲しみ、遂には人情を持たない大手スーパーや取引先の輩への怒りまで込み上げてきた。&lt;&#x2f;p&gt;
+&lt;p&gt;基本、技術書と漫画しか買わないと決めているのだが、ここまで感情を動かされたら買わずには居られなかった。&lt;&#x2f;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

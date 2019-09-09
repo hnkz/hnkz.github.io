@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>sugerme no site</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://hnkz.github.io/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+            <header>
+                <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io">
+                        <span itemprop="name">Home
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/20190603-self-introduction">
+                        <span itemprop="name">Self-Introduction
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/categories">
+                        <span itemprop="name">Categories
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/tags">
+                        <span itemprop="name">Tags
+                        </span></a>
+                
+                </nav>
+            </header>
+        
+        <h1 itemprop="headline">Distributed System of Apocalypse</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>3 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2019-07-22
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>分散システムについて調べたことをまとめていきます。</p>
+<ul>
+<li><a href="https://medium.com/mold-project/%E5%90%8C%E6%9C%9F-d34eeea599ec">ブロックチェーンを形作る分散システムにおけるノード間の同期</a></li>
+<li><a href="https://qiita.com/Sadalsuud/items/571b7a07215c4476755b">ベクトルタイムスタンプについて</a></li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h2 id="burotukutienwoxing-zuo-rufen-san-sisutemuniokerunodojian-notong-qi"><a href="https://medium.com/mold-project/%E5%90%8C%E6%9C%9F-d34eeea599ec">ブロックチェーンを形作る分散システムにおけるノード間の同期</a></h2>
+<p>分散システムではノード間の同期が欠かせない。しかし、誤差のない同期を取ることは難しい。少しでも誤差のない動機を取るために、多くのアルゴリズムが開発されてきた。この記事ではそれらアルゴリズムについて解説を行っている。</p>
+<h3 id="shao-jie-sareteiruarugorizumu">紹介されているアルゴリズム</h3>
+<h4 id="wu-li-kurotuku">物理クロック</h4>
+<ul>
+<li>内部クロック
+<ul>
+<li>アルゴリズムかどうかは微妙だけど...コンピュータ内部の水晶振動子を用いた同期。すべてのコンピュータで、水晶子が同じ振動数を持っているとは限らないため、分散システムの同期には向いていないが、他のアルゴリズムで生じる誤差の補助として用いられることがある。</li>
+</ul>
+</li>
+<li>ネットワークタイムプロトコル（NTP)
+<ul>
+<li>よく使うやつ。NTPサーバに問い合わせるやつ。1~50msの精度で誤差を抑えられるらしい。</li>
+</ul>
+</li>
+<li>Berkeleyアルゴリズム
+<ul>
+<li>相対的なやつ。参加しているノードの時刻を時間サーバに送り、平均を取る。</li>
+</ul>
+</li>
+</ul>
+<h4 id="lun-li-kurotuku">論理クロック</h4>
+<ul>
+<li>Lamportの論理クロック
+<ul>
+<li><img src="https://miro.medium.com/max/600/1*mCyD7RnhsNKGyyb1wgYkGw.png" alt="Lamportのアルゴリズム図解" /></li>
+</ul>
+</li>
+<li>ベクトルクロック
+<ul>
+<li><img src="https://miro.medium.com/max/419/1*ANJZOMvyOXhFiEWQ-VwMFA.png" alt="ベクトルクロックのアルゴリズム図解" /></li>
+</ul>
+</li>
+</ul>
+<h4 id="pai-ta-zhi-yu">排他制御</h4>
+<p>分散システムではプロセス間の協調動作は基本のものだが、並行処理でリソースのアクセスを行う際には分散型排他制御を用いる必要がある。
+分散型排他制御アルゴリズムは主に2種類</p>
+<ul>
+<li>トークンベース方式
+<ul>
+<li>SutarvationとDeadlockを防げる</li>
+<li>トークンリングアルゴリズムが有名だが、トークンを持つプロセスが落ちたときがめんどいらしい</li>
+</ul>
+</li>
+<li>許可ベース方式</li>
+</ul>
+<p>以下で詳しく説明をする</p>
+<ul>
+<li>集中アルゴリズム
+<ul>
+<li>一つのプロセスをコーディネーターとして選出し、そいつに色々任せる</li>
+<li>欠点として、故障単一箇所性がある</li>
+</ul>
+</li>
+<li>非集中アルゴリズム
+<ul>
+<li>多数決を取ったりする</li>
+<li>故障単一箇所性を克服しているが、多数のプロセスからのアクセスが多発すると性能低下</li>
+</ul>
+</li>
+<li>分散アルゴリズム
+<ul>
+<li>仮定として
+<ul>
+<li>すべてのイベントの順序が全順序関係として定義できること</li>
+<li>すべてのメッセージが失われないこと</li>
+</ul>
+</li>
+<li>なんかいい感じにやっていく</li>
+</ul>
+</li>
+</ul>
+<h4 id="xuan-ren-arugorizumu">選任アルゴリズム</h4>
+<p>選任のためのアルゴリズム</p>
+<ul>
+<li>ブリーアルゴリズム
+<ul>
+<li>コーディネータが故障した際に選任するやつ</li>
+<li>冗長らしい</li>
+</ul>
+</li>
+<li>リングアルゴリズム
+<ul>
+<li>サクセッサに送って、数値が高いやつがコーディネータ</li>
+</ul>
+</li>
+</ul>
+<h4 id="fen-san-sisutemutositenoburotukutientotong-qi">分散システムとしてのブロックチェーンと同期</h4>
+<ul>
+<li>ブロックチェーンとクロック同期
+<ul>
+<li>ブロックチェーンと物理クロック</li>
+<li>ブロックチェーンと論理クロック</li>
+</ul>
+</li>
+<li>ブロックチェーンとクロック同期</li>
+<li>ブロックチェーンとリーダー選出アルゴリズム</li>
+</ul>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                
+                    
+                    in <a href="https://hnkz.github.io/categories/distributed-system/">distributed system</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://hnkz.github.io/tags/distributed-system/">distributed system</a>
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

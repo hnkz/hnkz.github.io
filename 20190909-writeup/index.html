@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>sugerme no site</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://hnkz.github.io/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+            <header>
+                <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io">
+                        <span itemprop="name">Home
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/20190603-self-introduction">
+                        <span itemprop="name">Self-Introduction
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/categories">
+                        <span itemprop="name">Categories
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/tags">
+                        <span itemprop="name">Tags
+                        </span></a>
+                
+                </nav>
+            </header>
+        
+        <h1 itemprop="headline">Affinity CTF 2019 writeups</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>2 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2019-09-09
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>Affinity CTF 2019 のwriteupを適当に書いていきます．</p>
+<ul>
+<li>Download me</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h2 id="download-me">Download me</h2>
+<p>サイトのURLが渡されたのでアクセスします．
+<img src="01.png" width=700px>
+4つのファイルをダウンロードでき，flag.txtがあります．これをダウンロードするようですね．</p>
+<p>試しにfile1.txt~file3.txtをダウンロードしてみると正常にダウンロードできました．
+flag.txtを同じように試してみると，Invalid tokenと言われダウンロードできません．</p>
+<p>ダウンロードの際に，以下のようにファイル名とトークンが一致する必要があるようです．</p>
+<pre style="background-color:#002b36;">
+<span style="color:#839496;">http://165.22.22.11:25632/download.php?file=file3.txt&amp;token=65658fde58ab3c2b6e5132a39fae7cb9
+</span></pre>
+<p>flag.txtではtokenが空になっています．</p>
+<p>アプローチとしては以下を考えました．</p>
+<ul>
+<li>.htaccessやrobots.txtを探して重要情報を引き出す</li>
+<li>変数に異常値を入れて脆弱性を探す</li>
+<li>tokenを総当たりする</li>
+</ul>
+<h3 id="htaccessyarobots-txtwotan-sihui-zhong-yao-qing-bao-woyin-kichu-su">.htaccessやrobots.txtを探し絵重要情報を引き出す</h3>
+<p>まずは.htaccessへアクセスしてみます．</p>
+<img src="02.png" width=700px>
+<p>403 Forbidden...</p>
+<p>次はrobots.txtを試します．</p>
+<img src="03.png" width=700px>
+<p>/secret以下にアクセスできるようです．</p>
+<img src="04.png" width=700px>
+<p>お，フラグゲット？？フォームに入力してみると...</p>
+<p>Invalid.</p>
+<p>This is not a flag looking for.</p>
+<p>ぐぬぬ...</p>
+<h3 id="bian-shu-niyi-chang-zhi-woru-retecui-ruo-xing-wotan-su">変数に異常値を入れて脆弱性を探す</h3>
+<p>正規表現やパスを入れてみましたがきちんと処理されているみたいです．</p>
+<h3 id="tokenzong-dang-tari">token総当たり</h3>
+<p>128bitのtokenだったので，md5か何かだろうと思い総当たりを試しました．</p>
+<pre style="background-color:#002b36;">
+<span style="color:#cb4b16;">import </span><span style="color:#839496;">hashlib
+</span><span style="color:#cb4b16;">import </span><span style="color:#839496;">requests
+
+</span><span style="color:#859900;">for </span><span style="color:#839496;">i </span><span style="color:#859900;">in range</span><span style="color:#839496;">(</span><span style="color:#6c71c4;">0</span><span style="color:#839496;">,</span><span style="color:#6c71c4;">1000</span><span style="color:#839496;">):
+    token </span><span style="color:#657b83;">= </span><span style="color:#839496;">hashlib.</span><span style="color:#268bd2;">md5</span><span style="color:#839496;">(</span><span style="color:#859900;">str</span><span style="color:#839496;">(z).</span><span style="color:#268bd2;">encode</span><span style="color:#839496;">(&#39;</span><span style="color:#2aa198;">utf-8</span><span style="color:#839496;">&#39;)).</span><span style="color:#268bd2;">hexdigest</span><span style="color:#839496;">()
+    url </span><span style="color:#657b83;">= </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">http://165.22.22.11:25632/download.php?file=flag.txt&amp;token=</span><span style="color:#839496;">&quot; </span><span style="color:#657b83;">+ </span><span style="color:#839496;">token
+    conn </span><span style="color:#657b83;">= </span><span style="color:#839496;">requests.</span><span style="color:#268bd2;">get</span><span style="color:#839496;">(url)
+    </span><span style="color:#859900;">if </span><span style="color:#839496;">&quot;</span><span style="color:#2aa198;">CTF</span><span style="color:#839496;">&quot; </span><span style="color:#859900;">in </span><span style="color:#839496;">out.</span><span style="color:#268bd2;">decode</span><span style="color:#839496;">(&#39;</span><span style="color:#2aa198;">utf-8</span><span style="color:#839496;">&#39;):
+        </span><span style="color:#859900;">print</span><span style="color:#839496;">(out)
+</span></pre>
+<p>実行するとフラグをゲットしました．やったぜ．</p>
+<h3 id="dui-ce">対策</h3>
+<p>もっと質のいいhash関数を使うべし！！！</p>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                
+                    
+                    in <a href="https://hnkz.github.io/categories/ctf/">ctf</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://hnkz.github.io/tags/cache/">cache</a>
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

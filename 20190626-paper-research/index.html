@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>sugerme no site</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://hnkz.github.io/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+            <header>
+                <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io">
+                        <span itemprop="name">Home
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/20190603-self-introduction">
+                        <span itemprop="name">Self-Introduction
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/categories">
+                        <span itemprop="name">Categories
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/tags">
+                        <span itemprop="name">Tags
+                        </span></a>
+                
+                </nav>
+            </header>
+        
+        <h1 itemprop="headline">The ITC Distributed File System Principles and Design</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>2 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2019-06-26
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>分散システムについて調べていたらこの論文を見つけたので、読んでみました。</p>
+<pre style="background-color:#002b36;">
+<span style="color:#839496;">M. Satyanarayanan, John H. Howard, David A. Nichols, Robert N. Sidebotham, Alfred Z. Spector, Michael J. West, &quot;The ITC Distributed File System Principles and Design&quot;, “Proceedings of the Tenth ACM Symposium on Operating Systems Principles, Vol. 19.
+</span></pre><h2 id="yi-yan-shuo-ming">一言説明</h2>
+<ul>
+<li>CMUでのワークステーション用の分散ファイルシステムの構築</li>
+<li>スケールアウトしながら長期間使いたいための設計をした</li>
+<li>多種多様な人が使うからセキュリティについても考慮した</li>
+<li>ファイル全体をキャッシュするのがこのFSのキモらしい</li>
+<li>ファイルシステムの設計からサーバの構成まで、色々と書いてある</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h2 id="matome">まとめ</h2>
+<p>論文というよりかは、解説？ポエム？よくわからないのでまとめます。</p>
+<h3 id="1zhang-intoro">1章 イントロ</h3>
+<ul>
+<li>使用環境について</li>
+<li>CMUのキャンパスで学生や教員とかが使うっぽいワークステーション</li>
+<li>そのためのファイルシステムを構築した</li>
+</ul>
+<h3 id="2zhang-dezain">2章 デザイン</h3>
+<ul>
+<li>OSを作るより簡単だから分散ファイルシステムを作ったらしい</li>
+<li>位置情報を含めない、一意な名前を持つファイル</li>
+<li>Viceが計算リソースの集合体、Viceにアクセスする個人のワークステーションがVirtue</li>
+</ul>
+<h3 id="3zhang-xiang-xi-nadezain">3章　詳細なデザイン</h3>
+<h4 id="ming-qian-towei-zhi">名前と位置</h4>
+<ul>
+<li>共有ファイルスペースと、マシン固有のローカルなファイルスペースに別れている</li>
+</ul>
+<h4 id="repurikesiyon">レプリケーション</h4>
+<ul>
+<li>キャッシュを行う</li>
+<li>ファイルを開いて更新している間はキャッシュサーバにあるファイルに更新が適用され、Virtueは直接Viceと接続しない</li>
+<li>ファイルを閉じたら、適切な管理サーバにファイルが送られる</li>
+<li>リードオンリーのリプリケーションもしている</li>
+</ul>
+<h4 id="guan-shu-intahuesu">関数インターフェース</h4>
+<ul>
+<li>Vice-Virtueを繋ぐインターフェースとVirtueでファイルを見るためのインターフェースの二つが必要</li>
+</ul>
+<h4 id="sekiyuritei">セキュリティ</h4>
+<ul>
+<li>違反な情報のリリース、修正を処理する</li>
+<li>Viceでは暗号化を行なっている</li>
+<li>認証も行う
+<ul>
+<li>接続時、共通鍵をVice, Virtueは保持している</li>
+<li>接続後、セッションキーを渡され、その鍵で通信を行う</li>
+</ul>
+</li>
+</ul>
+<h3 id="4zhang-dezainzhu-yi">4章 デザイン主義</h3>
+<ul>
+<li></li>
+</ul>
+<h3 id="5zhang-purototaipu">5章 プロトタイプ</h3>
+<h3 id="6zhang-ta-nosisutemutonoguan-xi">6章 他のシステムとの関係</h3>
+<ul>
+<li>他の分散ファイルシステムとの比較とかもしてる</li>
+</ul>
+<h3 id="7zhang-jie-lun">7章 結論</h3>
+<ul>
+<li>色々まとめ書いてある。読むといい。</li>
+</ul>
+<h2 id="ci-nidu-mubekilun-wen">次に読むべき論文</h2>
+<ul>
+<li>Performance of Cache in Distributed Systems</li>
+<li>System for distributed software quality improvement
+<ul>
+<li>google</li>
+</ul>
+</li>
+<li>Map-reduce ready distributed file system</li>
+<li>Redundant, fault-tolerant, distributed remote procedure call cache in a storage system</li>
+<li>Implementation of multiple thread pools based ondistribution of service times</li>
+</ul>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                
+                    
+                    in <a href="https://hnkz.github.io/categories/distributed-system/">distributed system</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://hnkz.github.io/tags/distributed-system/">distributed system</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://hnkz.github.io/tags/file-system/">file system</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

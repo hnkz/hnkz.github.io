@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>sugerme no site</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://hnkz.github.io/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+            <header>
+                <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io">
+                        <span itemprop="name">Home
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/20190603-self-introduction">
+                        <span itemprop="name">Self-Introduction
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/categories">
+                        <span itemprop="name">Categories
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/tags">
+                        <span itemprop="name">Tags
+                        </span></a>
+                
+                </nav>
+            </header>
+        
+        <h1 itemprop="headline">Distributed System of Apocalypse</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>1 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2019-06-25
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>分散システムについて調べたこと・考えたことをまとめていきます。</p>
+<ul>
+<li>分散システムのキャッシュについての備忘録</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h2 id="fen-san-sisutemunokiyatusiyunituitekao-etemita">分散システムのキャッシュについて考えてみた</h2>
+<p>コンピュータにおけるキャッシュシステムは重要なものである。
+2019年現在、各ハードウェアのアクセスタイムである。</p>
+<ul>
+<li>レジスタ: 数百ps</li>
+<li>主記憶装置: 数十ns</li>
+<li>SSD: 数百µs</li>
+<li>磁気ディスク: 数十ms</li>
+</ul>
+<p>各記憶素子の間のアクセスタイムには大きな隔りがある。</p>
+<p>例えば、主記憶装置とレジスタのアクセス速度は約100倍の差がある。
+つまり、主記憶装置に1回アクセスする間に、レジスタに100回のアクセスを行うことができる。
+データを待っている間、CPUは暇になってしまうのだ。</p>
+<p>そのため、この暇を埋めるためにキャッシュが配置された。</p>
+<p>2019年現在、キャッシュシステムは様々な場面で用いられている。</p>
+<ul>
+<li>L1, L2, L3, L4キャッシュ</li>
+<li>ファイルシステムのキャッシュ</li>
+<li>CDN</li>
+<li>DNSキャッシュ</li>
+<li>などなど</li>
+</ul>
+<p>これは、様々な局面で速度の隔たりがあることを意味している。</p>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                
+                    
+                    in <a href="https://hnkz.github.io/categories/distributed-system/">distributed system</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://hnkz.github.io/tags/distributed-system/">distributed system</a>
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

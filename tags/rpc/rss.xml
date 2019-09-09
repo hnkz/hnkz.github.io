@@ -1,0 +1,34 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>sugerme no site</title>
+        <link>https://hnkz.github.io</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://hnkz.github.io/tags/rpc/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 02 Jul 2019 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>A comprehensive survey on fog computing: State-of-the-art and research challenges</title>
+                <pubDate>Tue, 02 Jul 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190702-paper-research/</link>
+                <guid>https://hnkz.github.io/20190702-paper-research/</guid>
+                <description>&lt;p&gt;分散システムについて調べていたらこの論文を見つけたので、読んでみました。&lt;&#x2f;p&gt;
+&lt;h2 id=&quot;lun-wen-qing-bao&quot;&gt;論文情報&lt;&#x2f;h2&gt;
+&lt;p&gt;サーベイ論文&lt;&#x2f;p&gt;
+&lt;pre style=&quot;background-color:#002b36;&quot;&gt;
+&lt;span style=&quot;color:#839496;&quot;&gt;@article{mouradian2017comprehensive,
+  title={A comprehensive survey on fog computing: State-of-the-art and research challenges},
+  author={Mouradian, Carla and Naboulsi, Diala and Yangui, Sami and Glitho, Roch H and Morrow, Monique J and Polakos, Paul A},
+  journal={IEEE Communications Surveys \&amp;amp; Tutorials},
+  volume={20},
+  number={1},
+  pages={416--464},
+  year={2017},
+  publisher={IEEE}
+}
+&lt;&#x2f;span&gt;&lt;&#x2f;pre&gt;</description>
+            </item>
+        
+    </channel>
+</rss>

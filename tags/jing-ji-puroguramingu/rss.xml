@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>sugerme no site</title>
+        <link>https://hnkz.github.io</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://hnkz.github.io/tags/jing-ji-puroguramingu/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Thu, 06 Jun 2019 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>確率DPというのを知りました</title>
+                <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190606-poem/</link>
+                <guid>https://hnkz.github.io/20190606-poem/</guid>
+                <description>&lt;p&gt;最近競技プログラミングをちょくちょくやります。&lt;&#x2f;p&gt;
+&lt;p&gt;敗北が怖いのでリアタイ参戦はしないんですが、atcoderの過去問解いたりしています。&lt;&#x2f;p&gt;
+&lt;p&gt;先日、M-SOLUTIONS プロコンオープンというコンテストが開かれて、そこに&lt;a href=&quot;https:&#x2f;&#x2f;atcoder.jp&#x2f;contests&#x2f;m-solutions2019&#x2f;tasks&#x2f;m_solutions2019_c&quot;&gt;C - Best-of-(2n-1)&lt;&#x2f;a&gt;という問題がありました。&lt;&#x2f;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

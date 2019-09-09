@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>sugerme no site</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://hnkz.github.io/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+            <header>
+                <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io">
+                        <span itemprop="name">Home
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/20190603-self-introduction">
+                        <span itemprop="name">Self-Introduction
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/categories">
+                        <span itemprop="name">Categories
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/tags">
+                        <span itemprop="name">Tags
+                        </span></a>
+                
+                </nav>
+            </header>
+        
+        <h1 itemprop="headline">Distributed System of Apocalypse</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>20 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2019-07-26
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>分散システムについて調べたことをまとめていきます。</p>
+<ul>
+<li>論文読む
+<ul>
+<li>Orion: A Distributed File System for Non-Volatile Main Memories and RDMA-Capable Networks</li>
+</ul>
+</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<pre style="background-color:#002b36;">
+<span style="color:#839496;">@inproceedings {227790,
+author = {Jian Yang and Joseph Izraelevitz and Steven Swanson},
+title = {Orion: A Distributed File System for Non-Volatile Main Memory and RDMA-Capable Networks},
+booktitle = {17th {USENIX} Conference on File and Storage Technologies ({FAST} 19)},
+year = {2019},
+isbn = {978-1-931971-48-5},
+address = {Boston, MA},
+pages = {221--234},
+url = {https://www.usenix.org/conference/fast19/presentation/yang},
+publisher = {{USENIX} Association},
+month = feb,
+}
+</span></pre><h2 id="yi-yan-shuo-ming">一言説明</h2>
+<ul>
+<li>NVMMストレージのための分散ファイルシステム
+<ul>
+<li>clean state</li>
+<li>NVMMの高速性</li>
+<li>RDMAのネットワーク</li>
+</ul>
+</li>
+</ul>
+<h2 id="ti-an-shou-fa">提案手法</h2>
+<ul>
+<li>NVMMとRDMAを使ったDisributed File System</li>
+</ul>
+<h2 id="ji-cun-yan-jiu-tonowei-i">既存研究との違い</h2>
+<ul>
+<li>NVMMとかRDMAに特化してる</li>
+<li>シングルレイヤー</li>
+</ul>
+<h2 id="jian-zheng-shou-fa">検証手法</h2>
+<ul>
+<li>他のファイルシステムと比べてる</li>
+<li>ミクロ、マクロな検証をしてる</li>
+<li>実環境を用意してる</li>
+</ul>
+<h2 id="ci-nidu-mulun-wen">次に読む論文</h2>
+<h2 id="nei-rong-matome">内容まとめ</h2>
+<h3 id="1-introduction">1 Introduction</h3>
+<ul>
+<li>NVMMは圧倒的パフォーマンスを提供する</li>
+<li>NVMMが主流になったDistributed File Systemでは以下の要因が主なボトルネックとなる
+<ul>
+<li>ネットワークパフォーマンス</li>
+<li>ソフトウェアオーバヘッド</li>
+<li>データの入れ替え</li>
+</ul>
+</li>
+<li>NVMMはbyte-addressableなので、ブロックベースのインタフェースは必要ない</li>
+<li>OrionはNVMMとRemote Direct Memory Access(RDMA)のためのDFS</li>
+<li>Orionは以下の分野に焦点を当ててる
+<ul>
+<li>RDMA
+<ul>
+<li>メタデータとデータアクセスを高速化できるときはRDMAを使う</li>
+</ul>
+</li>
+<li>ソフトウェアのオーバヘッド
+<ul>
+<li>従来の分散ファイルシステムは、ネットワークとストレージを分けた２レイヤーのデザイン</li>
+<li>それは、メタデータの重複や、過度なコピー、不必要なイベントハンドリングをする</li>
+<li>Orionでは、ネットワークとストレージ関数を一つに、RDMAとNVMMに最適化したカーネルレイヤーへ統合した</li>
+</ul>
+</li>
+<li>locality
+<ul>
+<li>RDMAは早いけど、NVMMのアクセスと比べると、10倍程度遅い</li>
+<li>Orionでは永続的なデータをクライアントへ移行し、空きスペースを効率的にかんりするために新しいdelegated allocation schemeを使う</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Orionは今までのDFSを圧倒的に上回っており、単一のコンピュータでアプリケーションを動かした時に匹敵するパフォーマンスを出している</li>
+<li>Section.2では、NVMMとRDMAを使ったDFSの機械と挑戦について話す</li>
+<li>Section.3では、Orionの全体的なアーキテクチャについて述べる</li>
+<li>Section.4, Section.5では、メタデータとデータのアクセスの高速化の実装をどう決めたかについて話す</li>
+<li>Section.6では、これらのメカニズムを評価する</li>
+<li>Section.7では、関連研究</li>
+<li>Section.8は締め</li>
+</ul>
+<h3 id="2-background-and-motivation">2 Background and Motivation</h3>
+<ul>
+<li>NVMMとRDMAのバックグランドについて</li>
+<li>NVMMをDFSで使うことの固有の非効率性について</li>
+</ul>
+<h4 id="2-1-non-volatile-main-memory">2.1 Non-Volatile Main Memory</h4>
+<ul>
+<li>NVMMは不揮発性のDIMM(NVDIMM)から構成される</li>
+<li>色々なNVDIMMモジュールが研究・提供されてる
+<ul>
+<li>3DX-Point memory</li>
+<li>SPIN-TORQUE TRANSFER RAM(STT-RAM)</li>
+<li>ReRAM</li>
+</ul>
+</li>
+<li>NVMMのために作られたファイルシステムがある</li>
+<li>キャッシュフラッシュとメモリバリアを用いてNVMMへの更新を慎重に順序づけて、クラッシュの一貫性を保証しなければいけない</li>
+</ul>
+<h4 id="2-2-rdma-networking">2.2 RDMA Networking</h4>
+<ul>
+<li>RDMAの説明をしてる</li>
+<li>pin-down cacheなるものを用いて、仮想アドレス空間にもアクセスできるRDMA NIC(RNIC)</li>
+<li>RDMAリクエストをverbsという</li>
+<li>inbound verbsは軽いらしい
+<ul>
+<li>Orionではその特性を色々使ってスケーラビリティを上げてるらしい</li>
+</ul>
+</li>
+<li>RDMAのアクセスはローカルアクセスより遅い
+<ul>
+<li>それはそう、64Bのアクセスだと~9倍、4KBのアクセスだと~20倍</li>
+</ul>
+</li>
+<li>RDMAは小さいパケットを送信するとトランザクションがより少なくなるらしい
+<ul>
+<li>つまり、小さいパケットが好み</li>
+<li>https://www.usenix.org/node/196244</li>
+</ul>
+</li>
+<li>RDMAのwriteは持続性がない
+<ul>
+<li>commit(RDMA Durable Write Commit)でできるらしい</li>
+<li>でもまだ使えないので、CPU involvement(Software mecha-nisms for enabling access to remote persistent memory)</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-design-overview">3 Design Overview</h3>
+<ul>
+<li>Orionのデザインゴール
+<ul>
+<li>低いソフトウェアオーバヘッドのスケーラブルパフォーマンス
+<ul>
+<li>スケーラビリティと低レイテンシはNVMMのパフォーマンス発揮に必須</li>
+<li>以下で達成してる
+<ul>
+<li>functionとnetwork操作の統合</li>
+<li>RDMAを通しての直接のNVMMのデータアクセス</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>metadataアップデートによる効率的なネットワークの使用
+<ul>
+<li>クライアントはファイルをキャッシュしており、変更が生じた際はメタデータを送るだけでいい</li>
+</ul>
+</li>
+<li>metadataと一貫性
+<ul>
+<li>log-structuredデザイン</li>
+<li>読み込みは並列、書き込みは直列だけ
+<ul>
+<li>metadataを保証するinode logの更新</li>
+<li>コンフリクトを解消するclient arbitrationという新しいcoordination scheme</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DFSのDAXのサポート
+<ul>
+<li>DAX(direct load/store)のサポートはNVMMにとっていい</li>
+<li>クライアントにローカルNVMMのFSにアクセス可能にする</li>
+</ul>
+</li>
+<li>繰り返しのアクセスがローカルアクセスになる
+<ul>
+<li>クライアントキャッシュ</li>
+<li>log-structuredはキャッシュ一貫性を維持するコストを下げる</li>
+</ul>
+</li>
+<li>信頼性とデータ持続性
+<ul>
+<li>metadata, リプリケーションとアベイラビリティーの達成</li>
+<li>replicationプロトコルはデータ持続性を保証する</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-1-cluster-organization">3.1 Cluster Organization</h4>
+<ul>
+<li>Orionは以下の構成から成る
+<ul>
+<li>Metadata server(MDS)</li>
+<li>data stores(DSs)</li>
+<li>RDMAネットワークで繋がっているクライアント</li>
+<li><img src="01.png" width=700px>
+</li>
+</ul>
+</li>
+<li>MDS
+<ul>
+<li>metadataの管理</li>
+<li>クライアントへのRDMAコネクションの接続</li>
+<li>クライアントはmetadataをMDSへ伝える</li>
+</ul>
+</li>
+<li>Orionはクライアントにグローバルへの管理とアクセスを許可している
+<ul>
+<li>ここでグローバルとはNVMMのプール</li>
+</ul>
+</li>
+<li>ファイルデータは複数のDSに渡って存在することもある</li>
+<li>Internal clientsはローカルのNVMMを持ってるからDSsのように振る舞える</li>
+<li>External clientsはNVMMを持っていないため、データアクセスはできるが、データのストアはできない</li>
+<li>Orionはdataとmetadataのリプリケーションをサポートしてる
+<ul>
+<li>Mojim-style replication</li>
+<li>Mojimは低レイテンシリプリケーションを提供</li>
+</ul>
+</li>
+<li>OrionはDSsをリプリケーショングループとして組織
+<ul>
+<li>グループ内のDSsは同一のデータレイアウトを持つ</li>
+</ul>
+</li>
+<li>Orionはブロードキャストのリプリケーションを使う</li>
+</ul>
+<h4 id="3-2-software-organization">3.2 Software Organization</h4>
+<ul>
+<li>OrionのソフトウェアはクライアントとMDSで動いてる
+<ul>
+<li>POSIXインタフェース</li>
+<li>NVMMのファイルとmetadataを管理、MDSとクライアントの通信処理をするカーネルモジュール
+<ul>
+<li>カーネルで処理を走らせることで不用意なコンテキストスイッチを無くしてる</li>
+<li>シングルレイヤーの工夫
+- OrionのファイルシステムはNOVAを継承している</li>
+</ul>
+</li>
+<li>log-structured POSIX-compliant local NVMM file system</li>
+<li>inode log data structureはNOVAから受け継いだ</li>
+</ul>
+</li>
+<li><img src="02.png" width=700px>
+</li>
+<li>Orionのinode
+<ul>
+<li>NVMMの連結リストのmetadata logのheadとtailのポインターを持つ</li>
+</ul>
+</li>
+<li>OrionはログをVFS inode作るために使ってる</li>
+<li>MDSはmetadataの全体的な構成を持ってる</li>
+<li>クライアントへのログのコピーはmetadataの管理を簡単・高速にする
+<ul>
+<li>クライアントはログを辿ることで、metadataを復元することができる</li>
+</ul>
+</li>
+<li>Orionはデータを分散しておくために、global page addreses(GPAs)を使っている</li>
+<li>Orionクライアントはクライアント側のデータキャッシュも行う
+<ul>
+<li>キャッシュはcopy-on-writeに紐づいてる</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-metadata-management">4 Metadata Management</h3>
+<ul>
+<li>metadataの更新はクリティカルパスなので速くやらないといけない</li>
+</ul>
+<h4 id="4-1-metadata-communication">4.1 Metadata Communication</h4>
+<ul>
+<li>MDSはOrionのmetadata通信を組織しており、metadataの更新はそこで行われる
+<ul>
+<li>クライアントはmetadataのfetch,更新metadataの送信をMDSにする</li>
+</ul>
+</li>
+<li>クライアントは操作の複雑性に応じて、以下の3つの方法でMDSと通信できる
+<ol>
+<li>direct RDMA reads</li>
+<li>log commits</li>
+<li>Remote Procedure Calls(RPCs)</li>
+</ol>
+</li>
+<li>RDMA reads
+<ul>
+<li>MDSからmetadataを引き出す時、one-sided RDMA readsを使う</li>
+<li>クライアントはファイルのためにinodeとlogにNVMMはbyte-addressableだから、RDMA readsを使ってアクセスできる
+<ul>
+<li>このアクセスはMDS CPU経由で、スケーラビリティを上げる</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Log commits
+<ul>
+<li>クライアントはmetadataの更新の際にlog commitsを使う</li>
+<li>RDMA sends</li>
+<li>分散ロック(client arbitration)なしで、複数のクライアントが単一のinodeのログをcommitできる</li>
+</ul>
+</li>
+<li>Remote Procedure Calls
+<ul>
+<li>複数のinodeに関与するmetadataのアクセスにはRPCsを用いる
+<ul>
+<li>O_APPENDフラグでのファイル書き込みなど</li>
+</ul>
+</li>
+<li>OrionのRPCはverbとRDMA writeを使う</li>
+</ul>
+</li>
+<li>例
+<ul>
+<li><img src="03.png" width=700px>
+- RPC-based metadata updata
+</li>
+</ul>
+</li>
+<li>RDMA Optimizations
+<ul>
+<li>Orionは相対ポインターを使ってる</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-2-minimizing-commit-latency">4.2 Minimizing Commit Latency</h4>
+<ul>
+<li>リクエスト処理のレイテンシはI/Oパフォーマンスに重大</li>
+<li><img src="04.png" width=700px>
+</li>
+<li>MDSはそれぞれのクライアントごとに、通信のためにNVMMに256KBの通信バッファを用意</li>
+<li>MDSはリクエストを2段階で処理する
+<ol>
+<li>ネットワークスレッドがRDMA completion queues(CQ)をpollsしてfile system threadへディスパッチ</li>
+<li>File System threadsがRPCを処理して、VFSを更新</li>
+</ol>
+</li>
+<li>最適化のため、ネットワークスレッドにログエントリーを直接付け加えられることによって、log commitsに優先順位がつけられる</li>
+<li>log commitのためにNTはinode番号を読み、non-temporal movesを発行してエントリーを加え、tail pointerを更新する
+<ul>
+<li>ほかのクライアントはコミットされたエントリーを読め、ローカルに適応できる</li>
+<li>NTはrecv verbをポストしてrecvバッファを解放し、再利用する</li>
+<li>Finally, it dispatches the task for updating in-DRAM data structures to a file system thread based on the inode number.</li>
+</ul>
+</li>
+<li>File SystemはGCを走らせる</li>
+</ul>
+<h4 id="4-3-client-arbitration">4.3 Client Arbitration</h4>
+<ul>
+<li>Client Arbitrationは以下のような事項により成り立った？
+<ol>
+<li>inbound RMDA readの処理は、outbound writeよりコストが低い.実験では、1秒で15MBのinbound reads / 1.9MBのoutbouhnd writes</li>
+<li>MDSでは、一貫性を保つための初期化メッセージがOrionのパフォーマンスを落とす</li>
+<li>ログを追加する操作は軽い: 500 CPU cycles</li>
+</ol>
+</li>
+<li>クライアントはログの長さを確認してinodeが最新かどうかを確認する
+<ul>
+<li>ログの長さはtail pointerからRDMA read</li>
+</ul>
+</li>
+<li><img src="05.png" width=700px>
+</li>
+<li>rebuildは以下の時に起きる
+<ul>
+<li>2つ以上のクライアントが同じファイルにアクセスし、それらの1つがログコミットだった場合</li>
+<li>1つのクライアントが続けて二つ以上のログコミットを発行した場合</li>
+<li>MDSがクライアントのログコミットを受け入れたが、その前に他のクライアントがinode tailをRDMA readsしている時</li>
+</ul>
+</li>
+<li>これらの状況は&quot;window of vulnerablility&quot;のため、なかなかならない
+<ul>
+<li>ログを追加する時間は短いから</li>
+</ul>
+</li>
+<li>rebuildを避けるために、OrionはRPCを使ってinodeの更新をしてる</li>
+</ul>
+<h3 id="5-data-management">5 Data Management</h3>
+<ul>
+<li>OrionのNVMMはinternal clientsとdata storesに分散してる</li>
+</ul>
+<h4 id="5-1-delegated-allocation">5.1 Delegated Allocation</h4>
+<ul>
+<li>クリティカルパスなデータのアロケートを避けるために、Orionは分散した、２ステージのメモリ割り当てスキームを使う</li>
+<li>MDSは全てのページのbitmapを保持している</li>
+<li>クライアントはRPC経由でMDSに大きいチャンクスペースをリクエストできる</li>
+<li>このデザインはMDSをfine-grain data blocksから解放し、クライアントに低いオーバヘッドでページ割り当てをさせる</li>
+<li>ローカルの書き込みは速いため、可能な時はMDSはinternal clientsにローカルNVMMのチャンクを割り当てる</li>
+</ul>
+<h4 id="5-2-data-access">5.2 Data Access</h4>
+<ul>
+<li>クライアントはRDMAでDSと通信するか、ローカルNVMMにDAX経由でアクセスしてデータを読む
+<ul>
+<li>RDMAでは、データを読み、それを将来キャッシュとして読むためlocalのDRMAに配置しておく</li>
+</ul>
+</li>
+<li>アロケーションが起こるため、リモートの書き込みはone-sided
+<ul>
+<li>転送が終わると、クライアントはログコミットを発行する</li>
+</ul>
+</li>
+<li><img src="06.png" width=700px>
+</li>
+</ul>
+<h4 id="5-3-data-persistence">5.3 Data Persistence</h4>
+<ul>
+<li>Orionはデータの一貫性を保証しているが、多くのファイルシステムのように、ユーザプリファレンスとリプリケーションの可用性に基づいたデータの一貫性の要件を和らげる</li>
+<li>Orionのデータ一貫性保証の本質は、MDSがファイルアップデートのログコミットが遅れることの拡張である（は？）
+<ul>
+<li>弱い一貫性の保証のため、external clientはDSの更新が終わっていなくても、MDSにログコミットを送ることができる</li>
+<li>この一貫性レベルは、ext4のwrite-backモードと同等であり、データページが破損する可能性はあるが、metadataの生合成は維持される</li>
+<li>NOVAとdata journaling modeのext4と同等の強い一貫性は、Orionはファイル更新が終わるまで、ログコミットを遅延させることができる</li>
+</ul>
+</li>
+<li>RDMAを用いた強い一貫性への達成は、難しい
+<ul>
+<li>RDMAハードウェアがリモートのNVMMに書き込みを強いる基本的なメカニズムを提供していないから</li>
+<li>データ更新の強い一貫性のために、アルゴリズムを以下のように考えた
+<ul>
+<li>ファイルアップデートに一貫性が欲しいクライアントは、新しいページを適切なreplica groupの全てのノード上に割り当てるcopy-on-writeを使い、RDMA writesでページを更新する</li>
+<li>平行して、クライアントは投機的なログコミットをMDSに送る</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>replica groupのDSsは、RDMAトリックを使った新しいページへのRDMA writeを検知する
+<ul>
+<li>クライアントがRDMA writeを新しいページにする時、ターゲットへのRDMAパケットヘッダ内の即値として、pageのglobal addressを含む</li>
+<li>この値は、ターゲットのNICのcompletion queueを表す</li>
+<li>だから、DSはそのページの修正を検知することができる</li>
+<li>更新されたページごとに、DSはNVMM内のページに強い、小さいRDMA write経由で確認応答を送る
+<ul>
+<li>これは、十分な数の確認応答を受け取ると、ログコミットを処理する</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-4-fault-tolerance">5.4 Fault Tolerance</h4>
+<ul>
+<li>高性能で高密度のNVMMはノードの再構築を復元するより難しくする
+<ul>
+<li>結果、Orionはエラーを検知した後に、回復するのにめっちゃ頑張ってる</li>
+<li>ノードが回復しなかったら（例えば、電源が落ちた後のバグとか）、Orionクラスタに再ジョインし、一貫した状態に早急に回復する</li>
+<li>NVMM media errors, module failures, data-corrupting bugsのために、Orionはレプリカを用いてデータとメタデータの再構築ができる</li>
+<li>相対ポインタとNVMM内のmetadataを保証するglobal page addressesを使って、停電後もNVMM metadataは残ってるらしい！</li>
+</ul>
+</li>
+<li>metadataのサブシステムでは、MDSのfailuresのために、OrionはメインMDSとミラーから成るMojim-likeな高可用性のペアーを作る
+<ul>
+<li>全てのメタデータアップデートはメインのMDSに流れる</li>
+<li>そしてミラーに変更を伝搬させる</li>
+<li>メインに障害が起きると、ミラーはリクエストを処理し、メインはリカバーする</li>
+</ul>
+</li>
+<li>data左b具システムでは、DSの障害のため、DSはRDMA writeリクエストの即値を記録する
+<ul>
+<li>DSの失敗はレプリケーションからデータを得て復帰する</li>
+<li>ノードが死んだ時、他のグループは強い一貫性モードで動く</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-evaluation">6 Evaluation</h3>
+<ul>
+<li>既存のDFSと比べて性能評価
+<ul>
+<li>以下のクエスチョンに答える
+<ul>
+<li>one-layerデザインがパフォーマンスにどう影響を与えているか</li>
+<li>dataとmetadataの管理がどのくらいのオーバーヘッドをlocal NVMM file systemと比べて加えてるか</li>
+<li>異なるレベルの信頼性のためにOrionの設定がどの程度パフォーマンスに影響を与えるか</li>
+<li>どのようにOrionのMDSをスケールするか</li>
+</ul>
+</li>
+<li>実験セットアップを述べてから評価を行う
+<ul>
+<li>micro, macroベンチマーク</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-1-experimental-setup">6.1 Experimental Setup</h4>
+<ul>
+<li>OrionをDRAMのpersistent memoryをエミュレートする10ノードのクラスターで実行させた
+<ul>
+<li>それぞれのノードは2つのクアッドコア(Intel Xeon Westmere-EP)と48GBのDRAMを持っている
+<ul>
+<li>pmem デバイスをエミュレートする32GBもある</li>
+</ul>
+</li>
+<li>それぞれのノードはInfiniband modeで動き、Infiniband switch(QLogic 123000)と繋がっているRDMA NIC(Mellanox ConnectX-2 40 Gbps HCA)を持ってる</li>
+<li>DSsのDirect Cache Accessは止めてある</li>
+<li>co-locatedアプリケーションの影響を実証するために、それぞれのクライアントのRDMAリクエストの処理と発行を一つのコアに集中させた</li>
+</ul>
+</li>
+<li>Mellanox OFEDからのOrion verb kernel modulesが乗ったLinux4.10 kernel上でOrionのプロトタイプを作った
+<ul>
+<li>OrionのFSはNOVAからのコードを再利用し、分散関数とデータ構造のサポートのために8000行くらいコードを追記した</li>
+<li>ネットワークモジュールはスクラッチから作成し、8000行のコードから成る</li>
+</ul>
+</li>
+<li>Ceph, Gluster, Octopusと比較する
+<ul>
+<li>リモートのRDMA(iSER)のiSCSI拡張を使ったRAMをホストするiSCSIにマウントされたext4とも比較する（ha?）</li>
+<li>最終的に、二つのローカルDAXファイルシステムと比較
+<ul>
+<li>NOVAとext4-DAX</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-2-microbenchmarks">6.2 Microbenchmarks</h4>
+<ul>
+<li><img src="07.png" width=700px>
+</li>
+<li>ログとRPCのレイテンシを計測することから始める
+<ul>
+<li>(a)で示してる</li>
+<li>7.96µsのRTT</li>
+<li>RPCリクエストとリソースを得る発行のレイテンシは8.5µs</li>
+<li>ログコミットはクライアントは応答を待つから、より低いレイテンシ、2µs</li>
+</ul>
+</li>
+<li>(b)では、metadata操作のレイテンシを示してる
+<ul>
+<li>CephとGlusterのレイテンシが34%から443%、Orionより高い</li>
+<li>Octopusはmkdir, unlink, rmdirでOrionより良い
+<ul>
+<li>Octopusは簡単なファイルシステムを使ってるから
+<ul>
+<li>ファイルとディレクトリが、一つのサーバのフルパスによってインデクスされたHashTableで管理されてる</li>
+<li>それぞれのファイルとディレクトリにファイル拡張とディレクトリエントリを割り当ててる</li>
+<li>この簡単化は大きいファイルやディレクトリを管理できないことを意味している</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ext4/iSERはいくつかのmetadata操作でOrionを超えている
+<ul>
+<li>block queueに入るとmetadataの更新が完了するから</li>
+<li>反対に、NVMM-aware システムはmetadataの一貫性ある更新のためにフルレイテンシがある</li>
+<li>I/Oレイテンシは良い感じ</li>
+</ul>
+</li>
+<li>ファイル読み込み、書き込みでは、Orionは低いレイテンシ
+<ul>
+<li>Orion internal clients(Orion-IC)では、良い感じ</li>
+<li>Orion external clients(Orion-EC)でもまーまー</li>
+</ul>
+</li>
+<li>(C)では、OrionとNOVAとExt4-DAXを比べてる
+<ul>
+<li>metadata操作では、OrionはRPCをMDSへ送っている</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-3-macrobenchmarks">6.3 Macrobenchmarks</h4>
+<ul>
+<li><img src="table01.png" width=700px>
+</li>
+<li><img src="08.png" width=700px>
+- 図見て
+</li>
+<li>3つのFilebench workloads(varmail, fileserver, webserver)を使った
+<ul>
+<li>YCSBのMongoDB</li>
+<li>図見て</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-4-metadata-and-data-replication">6.4 Metadata and Data Replication</h4>
+<ul>
+<li><img src="09.png" width=700px>
+- 図見て
+</li>
+</ul>
+<h4 id="6-5-mds-scalability">6.5 MDS Scalability</h4>
+<ul>
+<li><img src="10.png" width=700px>
+- 図見て
+</li>
+</ul>
+<h3 id="7-related-work">7 Related work</h3>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                
+                    
+                    in <a href="https://hnkz.github.io/categories/distributed-system/">distributed system</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://hnkz.github.io/tags/distributed-system/">distributed system</a>
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

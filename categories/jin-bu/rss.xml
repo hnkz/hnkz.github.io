@@ -1,0 +1,155 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>sugerme no site</title>
+        <link>https://hnkz.github.io</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://hnkz.github.io/categories/jin-bu/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 20 Aug 2019 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>キャッシュの論文をさらっと読んでみた</title>
+                <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190803-distributed-system/</link>
+                <guid>https://hnkz.github.io/20190803-distributed-system/</guid>
+                <description>&lt;p&gt;A Fast Analytical Model of Fully Associative Caches&lt;&#x2f;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Distributed System of Apocalypse</title>
+                <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190726-distributes-system/</link>
+                <guid>https://hnkz.github.io/20190726-distributes-system/</guid>
+                <description>&lt;p&gt;分散システムについて調べたことをまとめていきます。&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;論文読む
+&lt;ul&gt;
+&lt;li&gt;Orion: A Distributed File System for Non-Volatile Main Memories and RDMA-Capable Networks&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Distributed System of Apocalypse</title>
+                <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190725-distributed-system/</link>
+                <guid>https://hnkz.github.io/20190725-distributed-system/</guid>
+                <description>&lt;p&gt;分散システムについて調べたことをまとめていきます。&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;色々考えたり
+&lt;ul&gt;
+&lt;li&gt;分散SNSについて&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Distributed System of Apocalypse</title>
+                <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190723-distributed-system/</link>
+                <guid>https://hnkz.github.io/20190723-distributed-system/</guid>
+                <description>&lt;p&gt;分散システムについて調べたことをまとめていきます。&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;FAST&#x27;19の論文調査(https:&#x2f;&#x2f;www.usenix.org&#x2f;sites&#x2f;default&#x2f;files&#x2f;fast19_full-proceedings.pdf)&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Distributed System of Apocalypse</title>
+                <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190722-distributed-system/</link>
+                <guid>https://hnkz.github.io/20190722-distributed-system/</guid>
+                <description>&lt;p&gt;分散システムについて調べたことをまとめていきます。&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2f;&#x2f;medium.com&#x2f;mold-project&#x2f;%E5%90%8C%E6%9C%9F-d34eeea599ec&quot;&gt;ブロックチェーンを形作る分散システムにおけるノード間の同期&lt;&#x2f;a&gt;&lt;&#x2f;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2f;&#x2f;qiita.com&#x2f;Sadalsuud&#x2f;items&#x2f;571b7a07215c4476755b&quot;&gt;ベクトルタイムスタンプについて&lt;&#x2f;a&gt;&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Distributed System of Apocalypse</title>
+                <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190713-distributed-system/</link>
+                <guid>https://hnkz.github.io/20190713-distributed-system/</guid>
+                <description>&lt;p&gt;分散システムについて調べたことをまとめていきます。&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;NDSSまとめ&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Distributed System of Apocalypse</title>
+                <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190628-distributes-system/</link>
+                <guid>https://hnkz.github.io/20190628-distributes-system/</guid>
+                <description>&lt;p&gt;分散システムについて調べたことをまとめていきます。&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;分散システム　原理とパラダイム　第二版 第二章を読んで&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Distributed System of Apocalypse</title>
+                <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190625-distributed-system/</link>
+                <guid>https://hnkz.github.io/20190625-distributed-system/</guid>
+                <description>&lt;p&gt;分散システムについて調べたこと・考えたことをまとめていきます。&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;分散システムのキャッシュについての備忘録&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Distributed System of Apocalypse</title>
+                <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190622-distributed-system/</link>
+                <guid>https://hnkz.github.io/20190622-distributed-system/</guid>
+                <description>&lt;p&gt;分散システムについて調べたことをまとめていきます。&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;分散システム　原理とパラダイム　第二版を読んで
+&lt;ul&gt;
+&lt;li&gt;分散透過性について&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Distributed System of Apocalypse</title>
+                <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190619-distributed-system/</link>
+                <guid>https://hnkz.github.io/20190619-distributed-system/</guid>
+                <description>&lt;p&gt;分散システムについて調べたことをまとめていきます。&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;awasome-distributed-systems&lt;&#x2f;li&gt;
+&lt;li&gt;Distributes Systems Reading List&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Distributed System of Apocalypse</title>
+                <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190614-distributed-system/</link>
+                <guid>https://hnkz.github.io/20190614-distributed-system/</guid>
+                <description>&lt;p&gt;分散システムについて調べたことをまとめていきます。&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;分散システム資料やリンク&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

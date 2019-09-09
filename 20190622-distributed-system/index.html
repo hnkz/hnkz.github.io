@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>sugerme no site</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://hnkz.github.io/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+            <header>
+                <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io">
+                        <span itemprop="name">Home
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/20190603-self-introduction">
+                        <span itemprop="name">Self-Introduction
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/categories">
+                        <span itemprop="name">Categories
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/tags">
+                        <span itemprop="name">Tags
+                        </span></a>
+                
+                </nav>
+            </header>
+        
+        <h1 itemprop="headline">Distributed System of Apocalypse</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>4 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2019-06-22
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>分散システムについて調べたことをまとめていきます。</p>
+<ul>
+<li>分散システム　原理とパラダイム　第二版を読んで
+<ul>
+<li>分散透過性について</li>
+</ul>
+</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h2 id="fen-san-tou-guo-xing-nituite">分散透過性について</h2>
+<p>分散システムの目標の一つに分散透過性を満たすことがある。
+分散透過性とは、プロセスやリソースが複数のコンピュータにまたがっているにも関わらず、あたかも一つのコンピュータ上で動作しているように見えることである。
+そのようなコンピュータシステムを透過であるという。</p>
+<p>最近のサービスの多くが分散透過性を満たすような作りを目指したシステムアーキテクチャになっているんじゃないかな。
+単一のリソースで動かすようなサービスは利用者が限られてくるようなものとか、条件が限られてくる。
+AWSでクラウドでDockerでKubernetes!wが最近の流行りなのかな。TLとか見てると多い気がする。
+こんな昨今だから、オープンなサービスを目指そうとすると、分散透過性は大切な要件だよね。</p>
+<p>そんな重要性が高まっている透過性だけど、色々と種類があるらしい。</p>
+<h3 id="tou-guo-xing-nozhong-lei">透過性の種類</h3>
+<p>透過性には色々と種類がある。ISOで定められているらしい。...ネットで調べてみたけどあんまり情報なかったからとりあえず本の内容を引用する。</p>
+<ul>
+<li>アクセス</li>
+<li>位置</li>
+<li>移動</li>
+<li>再配置</li>
+<li>複製</li>
+<li>並行</li>
+<li>障害</li>
+</ul>
+<p>これ以外にも透過性はあるらしいけど、上に挙げたのが特に重要らしい。</p>
+<h4 id="akusesutou-guo-xing">アクセス透過性</h4>
+<p>どの端末（ハード、OSの違いを含んだ）でアクセスしても、同じようなサービスを提供できること。
+例えば、WebサービスはどのOS、ブラウザでアクセスしても同じサービスを提供してくれるよね。
+そゆこと。</p>
+<h4 id="wei-zhi-tou-guo-xing">位置透過性</h4>
+<p>ユーザがリソースの位置を意識させない性質のこと。
+例を挙げると、URLとかそう。URLがあればたとえサーバが移動されたとしても、そのIPアドレスにURLを紐づけてあげればリソースの位置を考慮せずにサービスにアクセスできる。</p>
+<h4 id="yi-dong-tou-guo-xing">移動透過性</h4>
+<p>リソースが移動できる性質のこと。
+例えば、サーバAのプロセスをサーバBに移動してもユーザはそのことを意識しないような設計。</p>
+<p>こんな感じで、いろんな透過性があるっぽい。
+ふむふむ。</p>
+<p>でも、上記の分散透過性を全て満たすのは実は不可能....この宇宙では光の速度は絶対だから...。
+例えば、日本からブラジルのサーバにアクセスする場合を考える。インターネットの速度は絶対に光の速度を超えることができない（情報伝達に光を用いているから）。
+だから、光が日本からブラジルに到達する時間以内に情報を伝達することは不可能。最低でも数百ミリ秒かかってしまうのだ！</p>
+<p>他にも、同時に満たすことができない分散透過性は色々ある。考えてみて！！</p>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                
+                    
+                    in <a href="https://hnkz.github.io/categories/distributed-system/">distributed system</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://hnkz.github.io/tags/distributed-system/">distributed system</a>
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

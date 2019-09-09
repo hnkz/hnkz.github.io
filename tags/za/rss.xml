@@ -1,0 +1,55 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>sugerme no site</title>
+        <link>https://hnkz.github.io</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://hnkz.github.io/tags/za/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Thu, 13 Jun 2019 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Githubに中国語が増えた</title>
+                <pubDate>Thu, 13 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190613-githubtrend/</link>
+                <guid>https://hnkz.github.io/20190613-githubtrend/</guid>
+                <description>&lt;p&gt;&lt;a href=&quot;https:&#x2f;&#x2f;github.com&#x2f;explore&quot;&gt;Github Explore&lt;&#x2f;a&gt;のTrending Repositoryを見ていて気づいたことが
+あります...中国語多すぎん...？&lt;&#x2f;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>はじめてのとうこう</title>
+                <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190605-init/</link>
+                <guid>https://hnkz.github.io/20190605-init/</guid>
+                <description>&lt;p&gt;こんにちは。Sugermeです。&lt;&#x2f;p&gt;
+&lt;p&gt;Rust製SSG、Zola使ってブログ作ってみました。
+元々は自分でSSG作ろうとしてたんですが、いろんなパースめんどくさくてやめちゃいました。&lt;&#x2f;p&gt;
+&lt;p&gt;これからは色々とやりきろうと思います。がんばります。&lt;&#x2f;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>self-introduction</title>
+                <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190603-self-introduction/</link>
+                <guid>https://hnkz.github.io/20190603-self-introduction/</guid>
+                <description>&lt;p&gt;Self-Introduction&lt;&#x2f;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Undergrad student at the University of Shizuoka in Japan🗻&lt;&#x2f;li&gt;
+&lt;li&gt;Majoring in computer science.&lt;&#x2f;li&gt;
+&lt;li&gt;Researching in MachineLarning Security, LowLayer Security(in particular, distributed system security) in (ohkilab)[https:&#x2f;&#x2f;sec.inf.shizuoka.ac.jp&#x2f;]&lt;&#x2f;li&gt;
+&lt;li&gt;21 years old.&lt;&#x2f;li&gt;
+&lt;li&gt;Nagoya lover💗&lt;&#x2f;li&gt;
+&lt;li&gt;Rustacean since 2018&#x2f;3&#x2f;31💖 (&#x2f;)(9 9)(&#x2f;)&lt;&#x2f;li&gt;
+&lt;li&gt;Ex-vimmer ✨&lt;&#x2f;li&gt;
+&lt;li&gt;Interested in MidlwareDevelopment, Security, LowLayer, MachineLearning&lt;&#x2f;li&gt;
+&lt;li&gt;Member of Wild Family, sawayaka-sec,(ohkilab)[https:&#x2f;&#x2f;sec.inf.shizuoka.ac.jp&#x2f;] &lt;&#x2f;li&gt;
+&lt;li&gt;Variety of interests(horror movie, japanese rock, snowboard, etc...&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

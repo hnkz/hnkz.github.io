@@ -1,0 +1,31 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>sugerme no site</title>
+        <link>https://hnkz.github.io</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://hnkz.github.io/tags/file-system/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 26 Jun 2019 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>The ITC Distributed File System Principles and Design</title>
+                <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190626-paper-research/</link>
+                <guid>https://hnkz.github.io/20190626-paper-research/</guid>
+                <description>&lt;p&gt;分散システムについて調べていたらこの論文を見つけたので、読んでみました。&lt;&#x2f;p&gt;
+&lt;pre style=&quot;background-color:#002b36;&quot;&gt;
+&lt;span style=&quot;color:#839496;&quot;&gt;M. Satyanarayanan, John H. Howard, David A. Nichols, Robert N. Sidebotham, Alfred Z. Spector, Michael J. West, &amp;quot;The ITC Distributed File System Principles and Design&amp;quot;, “Proceedings of the Tenth ACM Symposium on Operating Systems Principles, Vol. 19.
+&lt;&#x2f;span&gt;&lt;&#x2f;pre&gt;&lt;h2 id=&quot;yi-yan-shuo-ming&quot;&gt;一言説明&lt;&#x2f;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CMUでのワークステーション用の分散ファイルシステムの構築&lt;&#x2f;li&gt;
+&lt;li&gt;スケールアウトしながら長期間使いたいための設計をした&lt;&#x2f;li&gt;
+&lt;li&gt;多種多様な人が使うからセキュリティについても考慮した&lt;&#x2f;li&gt;
+&lt;li&gt;ファイル全体をキャッシュするのがこのFSのキモらしい&lt;&#x2f;li&gt;
+&lt;li&gt;ファイルシステムの設計からサーバの構成まで、色々と書いてある&lt;&#x2f;li&gt;
+&lt;&#x2f;ul&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

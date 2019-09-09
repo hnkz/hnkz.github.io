@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>sugerme no site</title>
+        <link>https://hnkz.github.io</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://hnkz.github.io/categories/poemu/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 05 Jun 2019 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>はじめてのとうこう</title>
+                <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+                <link>https://hnkz.github.io/20190605-init/</link>
+                <guid>https://hnkz.github.io/20190605-init/</guid>
+                <description>&lt;p&gt;こんにちは。Sugermeです。&lt;&#x2f;p&gt;
+&lt;p&gt;Rust製SSG、Zola使ってブログ作ってみました。
+元々は自分でSSG作ろうとしてたんですが、いろんなパースめんどくさくてやめちゃいました。&lt;&#x2f;p&gt;
+&lt;p&gt;これからは色々とやりきろうと思います。がんばります。&lt;&#x2f;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

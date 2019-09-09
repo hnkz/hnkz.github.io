@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>sugerme no site</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://hnkz.github.io/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+            <header>
+                <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io">
+                        <span itemprop="name">Home
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/20190603-self-introduction">
+                        <span itemprop="name">Self-Introduction
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/categories">
+                        <span itemprop="name">Categories
+                        </span></a>
+                
+                    <a itemprop="url"
+                        class=""
+                        href="https://hnkz.github.io/tags">
+                        <span itemprop="name">Tags
+                        </span></a>
+                
+                </nav>
+            </header>
+        
+        <h1 itemprop="headline">キャッシュの論文をさらっと読んでみた</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>1 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2019-08-20
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>A Fast Analytical Model of Fully Associative Caches</p>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="a-fast-analytical-model-of-fully-associative-caches">A Fast Analytical Model of Fully Associative Caches</h1>
+<ul>
+<li>PLDI2019のAccepted paper</li>
+</ul>
+<h2 id="yi-yan-shuo-ming">一言説明</h2>
+<ul>
+<li>計算時に，ローカルのプロパティを理解するのは簡単だが，グローバルなステートに依存するキャッシュは予測が難しい</li>
+<li>そのため，プログラマーは良くデータ移動のコストを見誤る</li>
+<li>既存のキャッシュモデルやシミュレータはキャッシュミス情報を提供するが，それは計算的にコストが高い</li>
+<li>Least Recently Used(LRU)方式のlightweight cache modelを提案する
+<ul>
+<li>シンボリックカウントの手法を使用して，メモリアクセスを列挙せずにキャッシュミスをカウントする
+<ol>
+<li>各メモリアクセスのスタック距離を割り出す</li>
+<li>キャッシュサイズよりも大きい距離でメモリアクセスをカウント</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lun-wen-nokimo">論文のキモ</h2>
+<ul>
+<li><a href="https://github.com/spcl/haystack">HayStack</a></li>
+<li>キャッシュミスのカウントにBarvinok algorithmを用いている</li>
+<li>高精度，高速</li>
+<li>プログラマーにキャッシュの感覚を提供！</li>
+</ul>
+<h2 id="ji-cun-yan-jiu-tonowei-i">既存研究との違い</h2>
+<ul>
+<li>スタック距離を計算して，キャッシュ容量より大きいスタック距離のインスタンスをカウントしていく</li>
+</ul>
+<h2 id="jian-zheng-nei-rong">検証内容</h2>
+<ul>
+<li>正確性，パフォーマンスについて調べた後，他の手法と１対１で比較している</li>
+</ul>
+<h2 id="ci-nidu-mulun-wen">次に読む論文</h2>
+<p>キャッシュの振る舞い分析には</p>
+<ul>
+<li>シミュレータ</li>
+<li>プロファイリング</li>
+<li>モデル
+の３つがある．
+基礎的(古い）論文と発展的（最近）の論文を上げておく</li>
+</ul>
+<h3 id="simiyureta">シミュレータ</h3>
+<ul>
+<li>Dinero IV Trace-Driven Uniprocessor Cache Simulator</li>
+<li>On modeling and analyzing cache hierarchies using CASPER</li>
+<li>The gem5 simulator</li>
+</ul>
+<h3 id="purohuairingu">プロファイリング</h3>
+<ul>
+<li>Evaluation techniques for storage hierarchies</li>
+<li>Locality analysis through static parallel sampling</li>
+</ul>
+<h3 id="moderu">モデル</h3>
+<ul>
+<li>An analytical cache model</li>
+<li>Analytical modeling of cache behavior for affine programs</li>
+</ul>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                
+                    
+                    in <a href="https://hnkz.github.io/categories/cache/">cache</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://hnkz.github.io/tags/cache/">cache</a>
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>
